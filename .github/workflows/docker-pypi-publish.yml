@@ -104,7 +104,7 @@ jobs:
         with:
           images: |
             warpdriven/rq-dashboard-fast
-            ghcr.io/${{ github.repository }}
+            warpdriven/${{ github.repository }}
 
       - name: Build and push Docker images
         uses: docker/build-push-action@v4
