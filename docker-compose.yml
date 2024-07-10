@@ -6,12 +6,9 @@ services:
       dockerfile: Dockerfile
     environment:
       - REDIS_URL=${REDIS_URL-redis://redis:6379}
-      - FASTAPI_PORT=${FASTAPI_PORT-8000}
+      - FASTAPI_PORT=${FASTAPI_PORT-8200}
     ports:
-      - '${FASTAPI_PORT-8000}:${FASTAPI_PORT-8000}'
+      - '${FASTAPI_PORT-8200}:${FASTAPI_PORT-8200}'
     volumes:
       - .:/app
     command: ['python', 'app.py']
-
-  redis:
-    image: redis:7
