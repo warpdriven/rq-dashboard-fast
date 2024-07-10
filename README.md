@@ -8,7 +8,7 @@
 `RQ Dashboard FastAPI` is a general purpose, lightweight FastAPI-based web frontend to monitor your RQ queues, jobs, and workers in real-time.
 Goal of this package is to ease integration into FastAPI-Applications and provide a Docker Image for convenience.
 
-<img width="1069" alt="Screenshot 2024-02-09 at 18 14 13" src="https://github.com/Hannes221/rq-dashboard-fast/assets/115920878/81946105-5b02-4413-bdf1-7016c85ad14d">
+<img width="1069" alt="Screenshot 2024-02-09 at 18 14 13" src="https://github.com/warpdriven/rq-dashboard-fast/assets/115920878/81946105-5b02-4413-bdf1-7016c85ad14d">
 
 <br />
 
@@ -49,7 +49,7 @@ $ pip install rq-dashboard-fast
 1. You can run the RQ Dashboard FastAPI as a Docker container with custom Redis URL:
 
 ```
-docker run -e REDIS_URL=<your_redis_url> hannes221/rq-dashboard-fast
+docker run -e REDIS_URL=<your_redis_url> warpdriven/rq-dashboard-fast
 
 ```
 
@@ -62,7 +62,7 @@ http://127.0.0.1:8000/rq
 To change change the port, you can specify the following flag:
 
 ```
-docker run -e REDIS_URL=<your_redis_url>  -e FASTAPI_PORT=<your_fastapi_port> hannes221/rq-dashboard-fast
+docker run -e REDIS_URL=<your_redis_url>  -e FASTAPI_PORT=<your_fastapi_port> warpdriven/rq-dashboard-fast
 ```
 
 Replace <your_fastapi_port> with your desired FastAPI and host port.
@@ -73,7 +73,7 @@ Replace <your_fastapi_port> with your desired FastAPI and host port.
 version: '3.11'
 services:
   dashboard:
-    image: hannes221/rq-dashboard-fast
+    image: warpdriven/rq-dashboard-fast
     ports:
       - '8000:8000'
     environment:
@@ -98,7 +98,7 @@ To change the part update the compose file:
 version: '3.11'
 services:
   dashboard:
-    image: hannes221/rq-dashboard-fast
+    image: warpdriven/rq-dashboard-fast
     ports:
       - '<your_fastapi_port>:<your_fastapi_port>'
     environment:
@@ -108,11 +108,11 @@ services:
 
 Replace <your_fastapi_port> with your desired FastAPI and host port.
 
-Docker Hub: [hannes221/rq-dashboard-fast](https://hub.docker.com/r/hannes221/rq-dashboard-fast)
+Docker Hub: [warpdriven/rq-dashboard-fast](https://hub.docker.com/r/warpdriven/rq-dashboard-fast)
 
 ## Github Repository
 
-Github: [rq-dashboard-fast](https://github.com/Hannes221/rq-dashboard-fast)
+Github: [rq-dashboard-fast](https://github.com/warpdriven/rq-dashboard-fast)
 
 ```
 $ pip install rq-dashboard-fast

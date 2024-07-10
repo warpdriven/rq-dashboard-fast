@@ -22,7 +22,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          repository: 'Hannes221/rq-dashboard-fast'
+          repository: 'warpdriven/rq-dashboard-fast'
 
       - name: Wait for services
         run: docker compose up -d
@@ -40,7 +40,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          repository: 'Hannes221/rq-dashboard-fast'
+          repository: 'warpdriven/rq-dashboard-fast'
 
       # Install Python and dependencies for building package
       - name: Set up Python
@@ -61,25 +61,25 @@ jobs:
           name: python-package-distributions
           path: dist/
 
-  publish-to-pypi:
-    name: >-
-      Publish Python 🐍 distribution 📦 to PyPI
-    needs:
-      - build
-    runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/p/rq-dashboard-fast
-    permissions:
-      id-token: write # IMPORTANT: mandatory for trusted publishing
-    steps:
-      - name: Download all the dists
-        uses: actions/download-artifact@v3
-        with:
-          name: python-package-distributions
-          path: dist/
-      - name: Publish distribution 📦 to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+#  publish-to-pypi:
+#    name: >-
+#      Publish Python 🐍 distribution 📦 to PyPI
+#    needs:
+#      - build
+#    runs-on: ubuntu-latest
+#    environment:
+#      name: pypi
+#      url: https://pypi.org/p/rq-dashboard-fast
+#    permissions:
+#      id-token: write # IMPORTANT: mandatory for trusted publishing
+#    steps:
+#      - name: Download all the dists
+#        uses: actions/download-artifact@v3
+#        with:
+#          name: python-package-distributions
+#          path: dist/
+#      - name: Publish distribution 📦 to PyPI
+#        uses: pypa/gh-action-pypi-publish@release/v1
 
   publish-to-docker:
     needs: test
@@ -110,7 +110,7 @@ jobs:
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: |
-            hannes221/rq-dashboard-fast
+            warpdriven/rq-dashboard-fast
             ghcr.io/${{ github.repository }}
 
       - name: Build and push Docker images

@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "rq-dashboard-fast"
-version = "0.5.2"
+version = "0.1.0"
 description = "rq-dashboard-fast is a FastAPI-based dashboard to monitor your Redis-Queue (RQ) Jobs, Queues, and Workers"
-authors = ["Hannes221 <hannespfau@gmail.com>"]
+authors = ["Cubean Liu <cubean@warp-driven.com>"]
 readme = "README.md"
 exclude = [
     "rq_dashboard_fast/tests",
