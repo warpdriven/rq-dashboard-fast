@@ -103,7 +103,6 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            warpdriven/rq-dashboard-fast
             warpdriven/${{ github.repository }}
 
       - name: Build and push Docker images
