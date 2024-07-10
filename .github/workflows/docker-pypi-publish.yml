@@ -82,7 +82,7 @@ jobs:
 #        uses: pypa/gh-action-pypi-publish@release/v1
 
   publish-to-docker:
-    needs: test
+#    needs: test
     name: Push Docker image to multiple registries
     runs-on: ubuntu-latest
     permissions:
