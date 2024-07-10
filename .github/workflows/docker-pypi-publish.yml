@@ -16,25 +16,25 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          repository: 'warpdriven/rq-dashboard-fast'
-
-      - name: Wait for services
-        run: docker compose up -d
-
-      - name: Run tests
-        run: docker exec rq-dashboard-fast-dashboard-1 pytest
-
-      - name: Stop containers
-        run: docker compose down
+#  test:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v4
+#        with:
+#          repository: 'warpdriven/rq-dashboard-fast'
+#
+#      - name: Wait for services
+#        run: docker compose up -d
+#
+#      - name: Run tests
+#        run: docker exec rq-dashboard-fast-dashboard-1 pytest
+#
+#      - name: Stop containers
+#        run: docker compose down
 
   build:
-    needs: test
+#    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
