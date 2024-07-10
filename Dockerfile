@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM --platform=linux/amd64 python:3.11-slim-buster AS build
 
 ENV POETRYVERSION=1.8.3 POETRY_VIRTUALENVS_CREATE=false PYTHONPATH=/app
 
@@ -13,3 +13,4 @@ COPY ./rq_dashboard_fast /app/rq_dashboard_fast
 COPY app.py /app
 
 WORKDIR /app
+CMD ["python", "app.py"]
